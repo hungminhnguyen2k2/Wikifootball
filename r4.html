@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hex Chart</title>
+        <link rel="shortcut icon" href="icon.png" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <script src="r4.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="r4.css">
+
+        <style>
+        body,li {
+            font-family : 微软雅黑,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        #base_container {
+            padding: 100px
+        }
+
+        </style>
+    </head>
+    <body>
+    
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+               <span>
+                <div>
+                    <div>
+                    <SPAN>SHOOTING</SPAN>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span></div>
+                <div>
+                    <span>PASSING</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span></div>
+                <div>
+                    <span>TECHNIQUE</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span></div>
+                <section>
+                    <div>
+                    <span>DRIBBLING</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span></div></section>
+                <div>
+                    <span>HEADING</span> 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span></div>
+                <div>
+                    <span>TACKLING</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span></span>
+        <span>
+        <div id="base_container" class="container-fluid text-center">
+
+            <div class="col-md-6">
+                <canvas id="demo"></canvas>
+            </div>
+                
+            <div class="col-md-6">
+                <table class="table table-bordered table-striped table-hover">
+                    <!-- <thead>
+                        <h4>Progress of <b><a href="https://www.dragondoor.com/b41/" target="_blank">Convict Conditioning</a></b></h4>
+                    </thead> -->
+                    <tbody>
+                        <tr>
+                            <th class="text-center">Abbreviation</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Level</th>
+                        </tr>
+                        <tr>
+                            <td>SH</td>
+                            <td>SHOOTING</td>
+                            <td><input type="text" class="form-control" id="SHOOTING" value="5" /></td>
+                        </tr>
+                        <tr>
+                            <td>PA</td>
+                            <td>PASSING</td>
+                            <td><input type="text" class="form-control" id="PASSING" value="7" /></td>
+                        </tr>
+                        <tr>
+                            <td>TE</td>
+                            <td>TECHNIQUE</td>
+                            <td><input type="text" class="form-control" id="TECHNIQUE" value="1" /></td>
+                        </tr>
+                        <tr>
+                            <td>DR</td>
+                            <td>DRIBBLING</td>
+                            <td><input type="text" class="form-control" id="DRIBBLING" value="3" /></td>
+                        </tr>
+                        <tr>
+                            <td>HE</td>
+                            <td>HEADING</td>
+                            <td>
+                                <input type="text" class="form-control" id="HEADING" value="1" /></td>
+                        </tr>
+                        <tr>
+                            <td>TA</td>
+                            <td>TACKLING</td>
+                            <td><input type="text" class="form-control" id="TACKLING" value="1" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            <button class="btn btn-lg btn-info btn-block" onclick="fresh()">Submit</button>
+            </div>
+
+        </div>
+        <script>
+            function getValueByID(id) {
+                return document.getElementById(id).value;
+            }
+
+            function fresh() {
+                var str = getValueByID('SHOOTING') / 10;
+                var agi = getValueByID('PASSING') / 10;
+                var mag = getValueByID('TECHNIQUE') / 10;
+                var hp = getValueByID('DRIBBLING') / 10;
+                var mp = getValueByID('HEADING') / 10;
+                var def = getValueByID('TACKLING') / 10;
+
+                hexagon.init('demo', 100, ['Shooting', 'Passing', 'Technique', 'Dribbling', 'Heading', 'Tackling']);
+                hexagon.draw([str, agi, mag, hp, mp, def]);
+            }
+
+            fresh ();
+        </script></span>
+    </body>
+
+</html>
