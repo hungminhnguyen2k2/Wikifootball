@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wikifootball</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Main css -->
+    <link rel='stylesheet' href='home_page.css'>
+    <link rel="stylesheet" href='player_list.css'>
+    <link rel="stylesheet" href='quiz.css'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/JavaScript">
+        function Questions(divname) {
+           this.QText   = new Array(20); // The questions
+           this.QAnswer = new Array(20); // The correct answers
+           this.QChoice = new Array(80); // The possible multi-choice values
+           this.thisAns = new Array(10); // The answers for this page
+           this.Answer  = new Array(10); // The user's answers
+           this.anchor = document.getElementById(divname);
+        
+           // OK, set the questions
+           this.QText[0] = "Who is the most expensive soccer player at this moment?";
+           this.QText[1] = "When did Messi make his debut for FC Barcelona? ";
+           this.QText[2] = "How many hattricks has Ronaldo scored in Champions League until this moment?";
+           this.QText[3] = "Who is currently the captain of Belgium National Team?";
+           this.QText[4] = "Who has the same age as Antoine Griezmann?";
+           this.QText[5] = "How many national leagues has Kevin De Bruyne won?";
+           this.QText[6] = "Mohamed Salah's goal against which team has helped him won the Puskas Award?";
+           this.QText[7] = "What is Virgil Van Dijk's current height?";
+           this.QText[8] = "How many goals did Kylian Mbappe score in World Cup 2018 (Russia)?";
+           this.QText[9] = "How many brothers do Paul Pogba have?";
+           this.QText[10] = "Harry Kane became the PFA Young Player of the year in which season?";
+           this.QText[11] = "How many times has Kun Aguero been the top goal scorer by season in EPL?";
+           this.QText[12] = "How old is Frankie De Jong?";
+           this.QText[13] = "Where is Rodrygo Silva from?";
+           this.QText[14] = "In which position does Vinicius Junior play?";
+           this.QText[15] = "Which team is Jadon Sancho now in?";
+           this.QText[16] = "What is Mario Mandzukic's nationality";
+           this.QText[17] = "In which season was David de Gea awarded the Premier League Golden Glove?";
+           this.QText[18] = "What is the fastest sprinting speed of Sergio Ramos?";
+           this.QText[19] = "What martial art did Zlatan Ibrahimovic earn a black belt in?";
+        
+           // Now, set the possible choices
+           this.QChoice[0] = "Neymar";
+           this.QChoice[1] = "Kylian Mbappe";
+           this.QChoice[2] = "Cristiano Ronaldo";
+           this.QChoice[3] = "Joao Felix";
+           this.QChoice[4] = "2002";
+           this.QChoice[5] = "2003";
+           this.QChoice[6] = "2004";
+           this.QChoice[7] = "2005";
+           this.QChoice[8] = "7";
+           this.QChoice[9] = "8";
+           this.QChoice[10] = "9";
+           this.QChoice[11] = "10";
+           this.QChoice[12] = "Alex Witsel";
+           this.QChoice[13] = "Toby Alderweireld";
+           this.QChoice[14] = "Eden Hazard";
+           this.QChoice[15] = "Youri Tielemans";
+           this.QChoice[16] = "Samuel Umtiti";
+           this.QChoice[17] = "Raphael Varane";
+           this.QChoice[18] = "Neymar";
+           this.QChoice[19] = "Eden Hazard";
+           this.QChoice[20] = "2";
+           this.QChoice[21] = "3";
+           this.QChoice[22] = "4";
+           this.QChoice[23] = "5";
+           this.QChoice[24] = "Mancheser City";
+           this.QChoice[25] = "Brighton";
+           this.QChoice[26] = "Chelsea";
+           this.QChoice[27] = "Everton";
+           this.QChoice[28] = "1.91m";
+           this.QChoice[29] = "1.92m";
+           this.QChoice[30] = "1.93m";
+           this.QChoice[31] = "1.94m";
+           this.QChoice[32] = "3";
+           this.QChoice[33] = "4";
+           this.QChoice[34] = "5";
+           this.QChoice[35] = "6";
+           this.QChoice[36] = "1";
+           this.QChoice[37] = "2";
+           this.QChoice[38] = "3";
+           this.QChoice[39] = "4";
+           this.QChoice[40] = "2012/2013";
+           this.QChoice[41] = "2013/2014";
+           this.QChoice[42] = "2014/2015";
+           this.QChoice[43] = "2015/2016";
+           this.QChoice[44] = "1";
+           this.QChoice[45] = "2";
+           this.QChoice[46] = "3";
+           this.QChoice[47] = "4";
+           this.QChoice[48] = "21";
+           this.QChoice[49] = "22";
+           this.QChoice[50] = "23";
+           this.QChoice[51] = "24";
+           this.QChoice[52] = "Argentina";
+           this.QChoice[53] = "Colombia";
+           this.QChoice[54] = "Chile";
+           this.QChoice[55] = "Brazil";
+           this.QChoice[56] = "Goalkeeper";
+           this.QChoice[57] = "Forward";
+           this.QChoice[58] = "Midfield";
+           this.QChoice[59] = "Referee";
+           this.QChoice[60] = "Bayern Munich";
+           this.QChoice[61] = "Manchester City";
+           this.QChoice[62] = "Borussia Dortmund";
+           this.QChoice[63] = "Juventus";
+           this.QChoice[64] = "Croatian";
+           this.QChoice[65] = "English";
+           this.QChoice[66] = "German";
+           this.QChoice[67] = "Polish";
+           this.QChoice[68] = "2014-2015";
+           this.QChoice[69] = "2015-2016";
+           this.QChoice[70] = "2016-2017";
+           this.QChoice[71] = "2017-2018";
+           this.QChoice[72] = "28.2 km/h";
+           this.QChoice[73] = "29.7 km/h";
+           this.QChoice[74] = "30.6 km/h";
+           this.QChoice[75] = "31 km/h";
+           this.QChoice[76] = "Taekwondo";
+           this.QChoice[77] = "Karate";
+           this.QChoice[78] = "Judo";
+           this.QChoice[79] = "Muay Thai";
+        
+           // Set the correct answers
+           this.QAnswer[0] = 1;
+           this.QAnswer[1] = 2;
+           this.QAnswer[2] = 2;
+           this.QAnswer[3] = 3;
+           this.QAnswer[4] = 4;
+           this.QAnswer[5] = 2;
+           this.QAnswer[6] = 3;
+           this.QAnswer[7] = 3;
+           this.QAnswer[8] = 2;
+           this.QAnswer[9] = 2;
+           this.QAnswer[10] = 3; // these answers are wrong - check them yourself!
+           this.QAnswer[11] = 1;
+           this.QAnswer[12] = 2;
+           this.QAnswer[13] = 4;
+           this.QAnswer[14] = 2;
+           this.QAnswer[15] = 3;
+           this.QAnswer[16] = 1;
+           this.QAnswer[17] = 4;
+           this.QAnswer[18] = 3;
+           this.QAnswer[19] = 1;
+        
+        }
+        
+        Questions.prototype.generateQuiz = function() {
+           var QCount = 0;
+           var QNumber = 0;
+        
+           // Initialise the "questions available" table
+           var QUsed = new Array(20);
+           for (QCount=0; QCount<20; QCount++) {
+              QUsed[QCount] = 1; // Marked as available
+           }
+        
+           // Delete any existing questions
+           //this.nukeExistingQuiz();
+           this.anchor.innerHTML = "";
+        
+           var HTMLBlob = "<table class=\' w3-table\'>";
+        
+           // Build up the questions
+           for (QCount=0; QCount<10; ) {
+              QNumber = Math.floor(20 * Math.random());
+              if (1 == QUsed[QNumber]) { // Still available?
+             HTMLBlob += this.AddQuestion(QNumber, QCount);
+             QCount++;
+                 QUsed[QNumber] = 0; // Marked as unavailable
+              }
+           }
+           HTMLBlob += "</table>";
+           this.anchor.innerHTML = HTMLBlob;
+        }
+        
+        // This removes any existing quiz on the page
+        Questions.prototype.nukeExistingQuiz = function() {
+           if (null != this.anchor && null != this.anchor.childCount) {
+              while (this.anchor.childCount > 0) {
+                 this.anchor.removeChild(this.anchor.childNodes[0]);
+              }
+           }
+        }
+        
+        // Add this to the DOM
+        Questions.prototype.AddQuestion = function(QNum, EntryNum) {
+           // This is really naughty: you should use DOM stuff, and not
+           // non-standard innerHtml ...
+           var Ix;
+           var HTMLBlob = "<tr class=\"each_quiz \"><td><input type=\"checkbox\" id=\"check" + EntryNum + "\" checked=\"checked\"></td><td>"
+                               + "Question #" + (EntryNum+1) + ":</td><td>"
+                               + "<strong>" + this.QText[QNum] + "</strong></td><td><select id=\"answer" + EntryNum + "\" size=\"1\">"
+                               + "<option selected=\"selected\" value=\"0\">-- Select an answer --</option>"
+           for (Ix=0; Ix<4; Ix++) {
+              HTMLBlob = HTMLBlob + "<option value=\"" + Ix + "\">" + this.QChoice[QNum*4+Ix] + "</option>";
+           }
+           HTMLBlob = HTMLBlob + "</select></td></tr>";
+           
+           this.thisAns[EntryNum] = this.QAnswer[QNum];
+           return HTMLBlob;
+        }
+        
+        
+        // Verify that all questions have been answered
+        Questions.prototype.AreQuestionsAnswered = function() {
+           var unanswered = 0;
+           for (var Ix=0; Ix<10; Ix++) {
+              this.Answer[Ix] = document.getElementById("answer" + Ix).selectedIndex;
+              if (this.Answer[Ix] == 0) {
+                 unanswered++;
+              }
+           }
+           return unanswered;
+        }
+        
+        // Score the results
+        Questions.prototype.ScoreIt = function() {
+           var count = this.AreQuestionsAnswered();
+           if (count > 0) {
+              alert("You didn't answer " + count + " questions. Please try again.");
+              count = 0;
+           } else {
+              for (var Ix=0; Ix<10; Ix++) {
+                 if (this.Answer[Ix] == this.thisAns[Ix]) {
+                    document.getElementById("check" + Ix).checked = true;
+                    count++;
+                 } else {
+                    document.getElementById("check" + Ix).checked = false;
+                 }
+              }
+              
+              
+              document.getElementById('results').innerHTML = 'You got '+ count + ' correct.';
+           }
+           return count;
+        }
+        </script>
+
+</head>
+<body>
+
+    <!-- Nav Menu -->
+    <div class='nav-menu'>
+            <nav class="navbar navbar-expand-lg background-color d-flex sticky-top">
+                    <a class="navbar-brand text-center text-bold text-white" href="home_page.html">WIKIFOOTBALL</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                              
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="player_list.html">Player List</a>
+                                  
+                                </li>
+                                <li class=' nav-item'>
+                                    <a class='nav-link text-white' href='manager_list.html'>Manager List</a>
+                                </li>
+                                <li class=' nav-item'>
+                                        <a class='nav-link text-white' href='search.html'>Player Search</a>
+                                </li>
+                                <li class=' nav-item'>
+                                        <a class='nav-link text-white' href='#'>Question</a>
+                                </li>
+                                <li class=' nav-item'>
+                                    <a class='nav-link text-white' href='quiz.html'>Quiz</a>
+                                </li>
+                              
+                              
+                            </ul>
+                            
+                          </div>
+        
+                </nav>
+            
+        </div>
+        <div id="quizblock"></div>
+
+        <script type="text/JavaScript">
+           var MyQuiz = new Questions("quizblock");
+           MyQuiz.generateQuiz();
+        </script>
+     
+        <input type="button" onclick="MyQuiz.ScoreIt();" value="Done">
+        <p id = 'results'></p>
+    
+</body>
+</html>
